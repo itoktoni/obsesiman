@@ -132,7 +132,7 @@
                     @endif
                     <li>
                         <div id="logout" class="header-menu" role="menuitem" tabindex="-1"
-                            onclick="location.href ='{{ $logout }}';">&nbsp;<i class="fa fa-power-off"></i>
+                            onclick="location.href ='{{ route("logout") }}';">&nbsp;<i class="fa fa-power-off"></i>
                             &nbsp;
                             Logout</div>
                     </li>
