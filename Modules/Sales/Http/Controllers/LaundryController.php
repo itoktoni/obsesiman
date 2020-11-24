@@ -77,7 +77,7 @@ class LaundryController extends Controller
     {
         if (request()->isMethod('POST')) {
             $data = $service->save(self::$model, $request->all());
-            return Response::redirectBack($data);
+            return redirect()->route('sales_laundry_print_order', ['code' => $data['data']->laundry_id]);
         }
         return view(Helper::setViewSave($this->template, $this->folder))->with($this->share([
             'model' => self::$model,

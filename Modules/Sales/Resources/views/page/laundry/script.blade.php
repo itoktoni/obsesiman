@@ -143,11 +143,11 @@ $(document).ready(function() {
                     "<td data-title='Product'>"+
                     "<input class='form-control input-sm text-left' name='detail[" + counter + "][temp_product]' value='" + product_name + "'>"+
                     "</td><input type='hidden' value='"+product_id+"' name='temp_id[]'><input class='temp_id' type='hidden' value='" + product_id +"' name='detail[" + counter + "][temp_id]'>"+
-                    "<td data-title='Qty/Disc' class='text-right col-lg-1'>"+
+                    "<td data-title='Bersih' class='text-right col-lg-1'>"+
                     "<input tabindex='"+counter+"1' class='form-control input-sm text-right number temp_qty' name='detail[" + counter + "][temp_qty]' value='" + product_qty +"'></td>"+
-                    "<td data-title='Price' class='text-right col-lg-1'>"+
+                    "<td data-title='Kotor' class='text-right col-lg-1'>"+
                     "<input tabindex='"+counter+"2' name='detail[" + counter + "][temp_price]' class='form-control input-sm text-right number temp_price' value='" + numeral(product_price).format('0,0') +"'></td>"+
-                    "<td data-title='Total' class='text-right col-lg-1'><textarea rows='2' name='detail[" + counter + "][temp_notes]' readonly class='form-control text-left' placeholder='notes'>"+product_notes+"</textarea></td>"+
+                    "<td data-title='Keterangan' class='text-right col-lg-1'><textarea rows='2' name='detail[" + counter + "][temp_notes]' readonly class='form-control text-left' placeholder='notes'>"+product_notes+"</textarea></td>"+
                     "</tr>";
                 $("#transaction .markup").append(markup);
                 sumTotal();
