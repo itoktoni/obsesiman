@@ -23,7 +23,7 @@ class LaundryRequest extends FormRequest
 
     public function prepareForValidation()
     {
-        $autonumber = Helper::autoNumber(self::$model->getTable(), self::$model->getKeyName(), 'SO' . date('Ym'), config('website.autonumber'));
+        $autonumber = Helper::autoNumber(self::$model->getTable(), self::$model->getKeyName(), 'DO' . date('Ym'), config('website.autonumber'));
         if (!empty($this->code)) {
             $autonumber = $this->code;
         }

@@ -612,10 +612,10 @@
                 <table>
                     <tr>
                         <td class="head">
-                            Contact Person
+                            No. Surat Jalan
                         </td>
                         <td>
-                            {{ config('website.phone') }}
+                            {{ $master->laundry_id }}
                         </td>
                     </tr>
                     <tr>
@@ -637,11 +637,6 @@
                         <h1 id="headline">
                             FORMULIR SERAH TERIMA LINEN
                         </h1>
-                    </td>
-                </tr>
-                <tr class="destination">
-                    <td colspan='8'>
-                        <strong>Nama Customer : </strong>
                     </td>
                 </tr>
                 <tr class="contact">
@@ -726,54 +721,50 @@
         </div>
         <br>
 
-        <table width="100%" border="0" style="margin-top:10px;width:100% !important;font-size:10px;margin-bottom:-50px">
-            <tr>
-                <td align="center"></td>
-                <td align="center">Petugas RS</td>
-                <td align="center">Petugas Laundry</td>
-                <td align="center">Perawat</td>
-            </tr>
-            <tr>
-                <td style="width: 25%;vertical-align: middle;">
-                    Penyerahan Kotor
-                </td>
-                <td style="width: 25%;">
+        <div style="width: 100%;">
+            <table style="text-align: center;margin:0px auto !important" width="100%" border="0"
+                style="margin-top:10px;width:70% !important;font-size:10px;margin-bottom:-50px">
+                <tr>
+                    <td align="center"></td>
+                    <td align="center">Petugas RS</td>
+                    <td align="center">Petugas Laundry</td>
+                    <td align="center">Perawat</td>
+                </tr>
+                <tr>
+                    <td style="width: 25%;vertical-align: middle;">
+                        Penyerahan Kotor
+                    </td>
+                    <td style="width: 25%;">
 
-                </td>
-                <td style="width: 25%;text-align:center;vertical-align: bottom;">
-                    {{ $master->user->name ?? '' }}
-                </td>
-                <td>
-                    <br>
-                    <br>
+                    </td>
+                    <td style="width: 25%;text-align:center;vertical-align: bottom;">
+                        {{ $master->user->name ?? '' }}
+                    </td>
+                    <td>
+                        <br>
+                        <br>
+                    </td>
+                </tr>
 
-                    <br>
-                    <br>
-                    <br>
-                </td>
-            </tr>
+                <tr>
+                    <td style="width: 25%;vertical-align: middle;">
+                        Penyerahan Bersih
+                    </td>
+                    <td style="width: 25%;">
 
-            <tr>
-                <td style="width: 25%;vertical-align: middle;">
-                    Penyerahan Bersih
-                </td>
-                <td style="width: 25%;">
+                    </td>
+                    <td style="width: 25%;text-align:center;vertical-align: bottom;">
+                        {{ $master->user->name ?? '' }}
+                    </td>
+                    <td>
+                        <br>
+                        <br>
+                    </td>
+                </tr>
 
-                </td>
-                <td style="width: 25%;text-align:center;vertical-align: bottom;">
-                    {{ $master->user->name ?? '' }}
-                </td>
-                <td>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                </td>
-            </tr>
+            </table>
+        </div>
 
-        </table>
 </body>
 
 </html>
