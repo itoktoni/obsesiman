@@ -521,7 +521,7 @@
     }
 
     #container table .item .product p {
-        font-size: 10px;
+        font-size: 11px;
         text-align: left;
         margin: 0px;
     }
