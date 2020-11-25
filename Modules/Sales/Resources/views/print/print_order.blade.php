@@ -497,7 +497,7 @@
         font-weight: bold;
         display: block;
         right: 0px;
-        font-size: 10px;
+        font-size: 7px;
         margin-left: 5px;
     }
 
