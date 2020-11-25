@@ -47,11 +47,11 @@ class LaundryController extends Controller
     private function share($data = [])
     {
         $tops = Helper::shareOption((new TopRepository()));
-        $product = Helper::shareOption((new ProductRepository()));
-        $tag = Helper::shareOption((new TagRepository()),false, true)->pluck('item_tag_name', 'item_tag_name')->prepend('- Masukan Keterangan - ','');
+        $product = Helper::shareOption((new ProductRepository()),false)->prepend('- Masukan Nama Linen -', '');
+        $tag = Helper::shareOption((new TagRepository()),false, true)->pluck('item_tag_name', 'item_tag_name')->prepend('- Keterangan - ','');
         $promo = Helper::shareOption((new PromoRepository()));
         $company = Helper::shareOption((new CompanyRepository()));
-        $customers = Helper::shareOption((new CustomerRepository()));
+        $customers = Helper::shareOption((new CustomerRepository()),false)->prepend(' - Masukan Rumah Sakit -', '');
         $status = Helper::shareStatus(self::$model->status);
 
         $from = $to = ['Please Choose Area'];

@@ -50,7 +50,7 @@
         {!! Form::open(['route' => $module.'_delete', 'id' => '', 'files' => true]) !!}
         <header class="panel-heading">
             <h2 class="panel-title text-right">
-                @lang('pages.data') {{ ucwords(str_replace('_',' ',$template)) }}
+               Semua Data
             </h2>
         </header>
         <div id="selection" class="row">

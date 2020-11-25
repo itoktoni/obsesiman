@@ -39,7 +39,7 @@ class Laundry extends Model
   const UPDATED_AT = 'laundry_updated_date';
   public $searching = 'laundry_name';
   public $datatable = [
-    'laundry_id'             => [true => 'ID'],
+    'laundry_id'             => [true => 'Nomer DO'],
     'name'           => [true => 'Pembuat'],
     'laundry_date'           => [true => 'Tanggal'],
     'crm_customer_name'           => [true => 'Nama Customer'],
@@ -47,8 +47,8 @@ class Laundry extends Model
   ];
 
   public $status = [
-    '1' => ['Active', 'primary'],
-    '0' => ['Not Active', 'danger'],
+    '1' => ['Aktif', 'primary'],
+    '0' => ['Tidak Aktif', 'danger'],
   ];
 
   public static function boot()

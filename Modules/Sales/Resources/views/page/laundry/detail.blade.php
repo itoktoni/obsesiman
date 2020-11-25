@@ -6,14 +6,14 @@
             </div>
             <div class="col-md-6">
                 <h2 class="panel-title text-right">
-                    <span id="add" class="btn btn-primary detail">Add Detail</span>
+                    
                 </h2>
             </div>
         </div>
         <div class="panel-body line">
             <div class="">
                 <div class="form-group {{ $errors->has('detail') ? 'has-error' : ''}}">
-                    <label class="col-md-1 control-label" for="inputDefault">Product</label>
+                    <label class="col-md-1 control-label" for="inputDefault">Linen</label>
                     <div class="col-md-3 {{ $errors->has('product') ? 'has-error' : ''}}">
                         {{ Form::select('', $product, null, ['class'=> 'form-control', 'id' => 'product']) }}
                     </div>
@@ -29,9 +29,11 @@
                     </div>
 
                     <label class="col-md-1 control-label" for="inputDefault">Keterangan</label>
-                    <div class="col-md-3 {{ $errors->has('product') ? 'has-error' : ''}}">
+                    <div class="col-md-2 {{ $errors->has('product') ? 'has-error' : ''}}">
                         {{ Form::select('', $tag, null, ['class'=> 'form-control', 'id' => 'notes']) }}
                     </div>
+
+                    <span id="add" style="margin:0px" class="btn btn-primary detail">Tambah</span>
 
                 </div>
 

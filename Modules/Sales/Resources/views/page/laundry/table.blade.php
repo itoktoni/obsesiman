@@ -1,8 +1,8 @@
 <table id="transaction" class="table table-no-more table-bordered table-striped">
     <thead>
         <tr>
-            <th class="text-left col-md-1">Hapus Product</th>
-            <th class="text-left col-md-2">Nama Product</th>
+            <th class="text-left col-md-1">Hapus Linen</th>
+            <th class="text-left col-md-2">Nama Linen</th>
             <th class="text-right col-md-1">Kotor</th>
             <th class="text-right col-md-1">Bersih</th>
             <th class="text-right col-md-2">Catatan</th>

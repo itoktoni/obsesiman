@@ -357,7 +357,7 @@
         position: absolute;
         top: 25px;
         z-index: 9;
-        border: none;
+        padding: 0px;
         right: 0px;
         width: 280px;
         font-size: 10px;
@@ -412,8 +412,8 @@
     }
 
     #container table .contact td {
-        padding-top: 5px;
-        padding-bottom: 10px;
+        padding-top: 0px;
+        padding-bottom: 5px;
     }
 
     #container table .contact td p {
@@ -429,7 +429,8 @@
         text-align: center;
         font-size: 20px;
         font-weight: bold;
-        padding-bottom: 5px;
+        padding-top: -5px;
+        padding-bottom: 0px;
         margin: 0px;
     }
 
@@ -469,7 +470,6 @@
 
     #container table .header .total {
         width: 120px;
-        text-align: right;
     }
 
     #container table .item td {
@@ -489,7 +489,7 @@
     }
 
     #container table .item .total {
-        text-align: right;
+        text-align: left;
     }
 
     #container table .item .total span {
@@ -539,7 +539,7 @@
     #container table .total_product td {
         text-align: right;
         background-color: #F5F5F5 !important;
-        padding-bottom: 10px;
+        font-weight: bold;
     }
 
     #container table .total_discount td {
@@ -593,6 +593,10 @@
     #paraf .header .term {
         text-align: left;
     }
+
+    table td {
+        padding: 0px 5px;
+    }
     </style>
 
 </head>
@@ -603,7 +607,7 @@
             <div id="box">
                 <h1>
                     <span>
-                        {{ config('website.name') }}
+                        {{ config('website.name') }} <small style="font-size: 15px;">Laundry and Rental</small>
                     </span>
                 </h1>
                 <h2>
@@ -623,7 +627,7 @@
                             Tanggal
                         </td>
                         <td>
-                            {{ $master->laundry_date->isoformat('dddd, d MMMM Y') ?? '' }}
+                            {{ $master->laundry_date->isoformat('dddd, D MMMM Y') ?? '' }}
                         </td>
                     </tr>
                 </table>
@@ -635,7 +639,7 @@
                 <tr>
                     <td align='left' colspan='8' valign='middle'>
                         <h1 id="headline">
-                            FORMULIR SERAH TERIMA LINEN
+                            FORMULIR SERAH TERIMA LINEN BERSIH
                         </h1>
                     </td>
                 </tr>
@@ -667,7 +671,7 @@
                     <td class="no" align="center">
                         <strong>No.</strong>
                     </td>
-                    <td class="product" colspan="4">
+                    <td class="product" align="center" colspan="4">
                         <strong>Jenis Linen</strong>
                     </td>
                     <td class="price">
@@ -676,7 +680,7 @@
                     <td class="qty">
                         <strong>Yang diantar</strong>
                     </td>
-                    <td class="total">
+                    <td class="total" align="center">
                         <strong>Keterangan</strong>
                     </td>
                 </tr>
@@ -693,7 +697,7 @@
                     <td class="price">
                         {{ $item->laundry_detail_kotor ?? '' }}
                     </td>
-                    <td class="qty">
+                    <td class="qty" >
                         {{ $item->laundry_detail_bersih ?? '' }}
                     </td>
                     <td class="total">
@@ -704,12 +708,13 @@
 
                 <tr class="total_product">
                     <td class="product" colspan="5">
-                        Total Product
+                        Total Linen
                     </td>
                     <td class="qty">
                         {{ $detail->sum('laundry_detail_kotor') ?? '' }}
                     </td>
                     <td class="qty">
+
                         {{ $detail->sum('laundry_detail_bersih') ?? '' }}
                     </td>
                     <td class="total">
@@ -719,11 +724,9 @@
 
             </table>
         </div>
-        <br>
-
-        <div style="width: 100%;">
+        <div style="width: 100%;margin-top:5px">
             <table style="text-align: center;margin:0px auto !important" width="100%" border="0"
-                style="margin-top:10px;width:70% !important;font-size:10px;margin-bottom:-50px">
+                style="margin-top:5px;width:70% !important;font-size:10px;margin-bottom:-50px">
                 <tr>
                     <td align="center"></td>
                     <td align="center">Petugas RS</td>
