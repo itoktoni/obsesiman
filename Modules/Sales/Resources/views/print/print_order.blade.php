@@ -756,7 +756,7 @@
                 <tr class="pag">
                     <td colspan="8" class="pagination" align="right">
                         <div class="bawah">
-                            <span class="page">Page </span> dari {{ $jumlah }}
+                        Dokumen Surat Jalan No. {{ $master->laundry_id }} ---  <span class="page">Page </span> dari {{ $jumlah }}
                             @if(!$loop->last)
                             <div class="page_break"></div>
                             @endif
