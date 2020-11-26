@@ -330,7 +330,7 @@
         position: absolute;
         right: 0;
         text-align: right;
-        top: -60px;
+        top: -10px;
     }
 
     #box h1 {
@@ -381,11 +381,11 @@
     }
 
     #container {
-        margin-top: 50px;
+        margin-top: 100px;
     }
 
     #container table {
-        margin-top: 20px;
+        margin-top: 60px;
         width: 100% !important;
     }
 
@@ -704,7 +704,7 @@
                     </td>
                 </tr>
                 @php
-                $chuck = $detail->chunk(15);
+                $chuck = $detail->chunk(14);
                 $jumlah = count($chuck);
                 $nomer = 1;
                 @endphp
