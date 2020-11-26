@@ -608,7 +608,7 @@
 
     .bawah{
         position: fixed;
-        bottom: 0px;
+        bottom: 20px;
     }
 
     #box table td{
@@ -704,7 +704,7 @@
                     </td>
                 </tr>
                 @php
-                $chuck = $detail->chunk(14);
+                $chuck = $detail->chunk(13);
                 $jumlah = count($chuck);
                 $nomer = 1;
                 @endphp
