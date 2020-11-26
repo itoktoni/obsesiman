@@ -13,10 +13,6 @@
         margin: 10px;
     }
 
-    table#border {
-        border: 0.5px solid grey;
-    }
-
     .print-only {
         display: none !important
     }
@@ -86,7 +82,6 @@
 
     th,
     td {
-        border: solid 1px #333;
         padding: 0.25em 8px;
         vertical-align: top
     }
@@ -335,7 +330,7 @@
         position: absolute;
         right: 0;
         text-align: right;
-        top: -65px;
+        top: -60px;
     }
 
     #box h1 {
@@ -355,7 +350,7 @@
 
     #box table {
         position: absolute;
-        top: 25px;
+        top: 40px;
         z-index: 9;
         padding: 0px;
         right: 0px;
@@ -395,12 +390,11 @@
     }
 
     #container table .destination td {
-        background-color: #F5F5F5 !important;
         text-align: left;
     }
 
     #container table .contact {
-        text-align: left;
+        text-align: center;
     }
 
     #container table .contact strong {
@@ -429,7 +423,7 @@
         text-align: center;
         font-size: 20px;
         font-weight: bold;
-        padding-top: -5px;
+        padding-top: 5px;
         padding-bottom: 0px;
         margin: 0px;
     }
@@ -447,7 +441,6 @@
 
     #container table .header td {
         padding-bottom: 7px;
-        background-color: #F5F5F5 !important;
     }
 
     #container table .header .no {
@@ -538,13 +531,11 @@
 
     #container table .total_product td {
         text-align: right;
-        background-color: #F5F5F5 !important;
         font-weight: bold;
     }
 
     #container table .total_discount td {
         text-align: right;
-        background-color: #F5F5F5 !important;
         padding-bottom: 10px;
     }
 
@@ -597,6 +588,49 @@
     table td {
         padding: 0px 5px;
     }
+
+    .page_break {
+        page-break-before: always;
+    }
+
+    .page:after {
+        content: counter(page, decimal);
+    }
+
+    @page {
+        padding:0px;
+    }
+
+    .pagination{
+        padding-bottom:3px;
+        border:none !important;
+    }
+
+    .bawah{
+        position: fixed;
+        bottom: 0px;
+    }
+
+    #box table td{
+        border: dotted 1px #000;
+    }
+
+    .header td{
+        border: dotted 1px #000;
+    }
+
+    .item td{
+        border: dotted 1px #000;
+    }
+
+    #tanda td{
+        border: dotted 1px #000;
+    }
+
+    .total_product td{
+        border: dotted 1px #000;
+    }
+
     </style>
 
 </head>
@@ -657,7 +691,6 @@
                     <td colspan="8">
                         <p>
                             @php
-
                             $total_delivery = intval($detail->sum('total'));
                             $total_discount = $master->laundry_discount_percent * $total_delivery / 100;
                             $total_tax = $total_delivery * $master->laundry_tax_percent / 100;
@@ -666,7 +699,13 @@
                         </p>
                     </td>
                 </tr>
-
+                @php
+                $chuck = $detail->chunk(15);
+                $jumlah = count($chuck);
+                @endphp
+                @if($jumlah > 1)
+                @foreach($chuck as $details)
+               
                 <tr class="header">
                     <td class="no" align="center">
                         <strong>No.</strong>
@@ -684,7 +723,9 @@
                         <strong>Keterangan</strong>
                     </td>
                 </tr>
-                @foreach($detail as $item)
+
+                @foreach($details as $item)
+                
                 <tr class="item">
                     <td class="no" align="center">
                         {{ $loop->iteration }}
@@ -697,14 +738,71 @@
                     <td class="price">
                         {{ $item->laundry_detail_kotor ?? '' }}
                     </td>
-                    <td class="qty" >
+                    <td class="qty">
                         {{ $item->laundry_detail_bersih ?? '' }}
                     </td>
                     <td class="total">
                         {{ $item->laundry_detail_notes ?? '' }}
                     </td>
                 </tr>
+
                 @endforeach
+
+                <tr class="pag">
+                    <td colspan="8" class="pagination" align="right">
+                        <div class="bawah">
+                            <span class="page">Page </span> dari {{ $jumlah }}
+                            @if(!$loop->last)
+                            <div class="page_break"></div>
+                            @endif
+                        </div>
+                    </td>
+                </tr>
+                
+                @endforeach
+                @else
+                @foreach($detail as $item)
+                
+                <tr class="header">
+                    <td class="no" align="center">
+                        <strong>No.</strong>
+                    </td>
+                    <td class="product" align="center" colspan="4">
+                        <strong>Jenis Linen</strong>
+                    </td>
+                    <td class="price">
+                        <strong>Yang dikirim</strong>
+                    </td>
+                    <td class="qty">
+                        <strong>Yang diantar</strong>
+                    </td>
+                    <td class="total" align="center">
+                        <strong>Keterangan</strong>
+                    </td>
+                </tr>
+
+                <tr class="item">
+                    <td class="no" align="center">
+                        {{ $loop->iteration }}
+                    </td>
+                    <td class="product" colspan="4">
+                        <p>
+                            {{ $item->laundry_detail_product_name ?? '' }}
+                        </p>
+                    </td>
+                    <td class="price">
+                        {{ $item->laundry_detail_kotor ?? '' }}
+                    </td>
+                    <td class="qty">
+                        {{ $item->laundry_detail_bersih ?? '' }}
+                    </td>
+                    <td class="total">
+                        {{ $item->laundry_detail_notes ?? '' }}
+                    </td>
+                </tr>
+
+                @endforeach
+                @endif
 
                 <tr class="total_product">
                     <td class="product" colspan="5">
@@ -723,9 +821,10 @@
                 </tr>
 
             </table>
+
         </div>
         <div style="width: 100%;margin-top:5px">
-            <table style="text-align: center;margin:0px auto !important" width="100%" border="0"
+            <table id="tanda" style="text-align: center;margin:0px auto !important" width="100%" border="0"
                 style="margin-top:5px;width:70% !important;font-size:10px;margin-bottom:-50px">
                 <tr>
                     <td align="center"></td>

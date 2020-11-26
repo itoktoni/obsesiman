@@ -178,7 +178,7 @@ class LaundryController extends Controller
                 'master' => $data,
                 'detail' => $data->detail,
             ];
-            $pdf = PdfFacade::loadView(Helper::setViewPrint(__FUNCTION__, $this->folder), $pasing);
+            $pdf = PdfFacade::loadView(Helper::setViewPrint(__FUNCTION__, $this->folder), $pasing)->setPaper('A5', 'landscape');;
             // return $pdf->download();
             return $pdf->stream();
         }
