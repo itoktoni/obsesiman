@@ -359,7 +359,7 @@
     }
 
     #box table .head {
-        width: 80px;
+        width: 110px;
         text-align: right;
     }
 
@@ -631,6 +631,10 @@
         border: dotted 1px #000;
     }
 
+    .nomer td{
+        font-size: 12px;
+    }
+
     </style>
 
 </head>
@@ -648,7 +652,7 @@
                     {{ config('website.address') }}
                 </h2>
                 <table>
-                    <tr>
+                    <tr class="nomer">
                         <td class="head">
                             No. Surat Jalan
                         </td>
@@ -702,6 +706,7 @@
                 @php
                 $chuck = $detail->chunk(15);
                 $jumlah = count($chuck);
+                $nomer = 1;
                 @endphp
                 @if($jumlah > 1)
                 @foreach($chuck as $details)
@@ -728,7 +733,7 @@
                 
                 <tr class="item">
                     <td class="no" align="center">
-                        {{ $loop->iteration }}
+                        {{ $nomer++ }}
                     </td>
                     <td class="product" colspan="4">
                         <p>
