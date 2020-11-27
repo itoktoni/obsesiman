@@ -612,23 +612,23 @@
     }
 
     #box table td{
-        border: solid 1px #000;
+        border: dotted 1px #000;
     }
 
     .header td{
-        border: solid 1px #000;
+        border: dotted 1px #000;
     }
 
     .item td{
-        border: solid 1px #000;
+        border: dotted 1px #000;
     }
 
     #tanda td{
-        border: solid 1px #000;
+        border: dotted 1px #000;
     }
 
     .total_product td{
-        border: solid 1px #000;
+        border: dotted 1px #000;
     }
 
     .nomer td{
