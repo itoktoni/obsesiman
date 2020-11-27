@@ -53,7 +53,9 @@
                     <a id="linkMenu" href="{!! route($module.'_data') !!}" class="btn btn-warning">Kembali</a>
                     @if($action_function == 'update')
                     <a target="__blank" href="{!! route($module.'_print_order', ['code'=> $model->{$key}]) !!}"
-                        class="btn btn-danger">Cetak</a>
+                        class="btn btn-danger">Cetak A5</a>
+                    <a target="__blank" href="{!! route($module.'_print_order', ['code'=> $model->{$key}, 'type' => 'A4']) !!}"
+                        class="btn btn-success">Cetak A4</a>
                     @endif
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
