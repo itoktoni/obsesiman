@@ -2,7 +2,7 @@
 
 namespace Modules\Sales\Dao\Repositories;
 
-use App\User;
+use App\Dao\Models\User;
 use Plugin\Notes;
 use Plugin\Helper;
 use Illuminate\Support\Facades\DB;

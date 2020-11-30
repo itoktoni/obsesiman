@@ -2,7 +2,7 @@
 
 namespace Modules\Sales\Dao\Models;
 
-use App\User;
+use App\Dao\Models\User;
 use Plugin\Helper;
 use App\Dao\Models\Company;
 use Illuminate\Support\Carbon;

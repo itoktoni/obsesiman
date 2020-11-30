@@ -709,8 +709,7 @@
                 $nomer = 1;
                 @endphp
                 @if($jumlah > 1)
-                @foreach($chuck as $details)
-               
+                @foreach($detail->chunk(13) as $details)
                 <tr class="header">
                     <td class="no" align="center">
                         <strong>No.</strong>
@@ -766,8 +765,6 @@
                 
                 @endforeach
                 @else
-                @foreach($detail as $item)
-                
                 <tr class="header">
                     <td class="no" align="center">
                         <strong>No.</strong>
@@ -785,7 +782,7 @@
                         <strong>Keterangan</strong>
                     </td>
                 </tr>
-
+                @foreach($detail as $item)
                 <tr class="item">
                     <td class="no" align="center">
                         {{ $loop->iteration }}

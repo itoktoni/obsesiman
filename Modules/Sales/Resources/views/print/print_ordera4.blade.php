@@ -709,6 +709,23 @@
                 @endphp
                 @if($jumlah > 1)
                
+                <tr class="header">
+                    <td class="no" align="center">
+                        <strong>No.</strong>
+                    </td>
+                    <td class="product" align="center" colspan="4">
+                        <strong>Jenis Linen</strong>
+                    </td>
+                    <td class="price">
+                        <strong>Yang dikirim</strong>
+                    </td>
+                    <td class="qty">
+                        <strong>Yang diantar</strong>
+                    </td>
+                    <td class="total" align="center">
+                        <strong>Keterangan</strong>
+                    </td>
+                </tr>
                 @foreach($detail as $item)
                 
                 <tr class="item">

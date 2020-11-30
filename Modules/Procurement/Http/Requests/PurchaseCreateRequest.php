@@ -2,7 +2,7 @@
 
 namespace Modules\Procurement\Http\Requests;
 
-use App\User;
+use App\Dao\Models\User;
 use Plugin\Helper;
 use App\Rules\Upload;
 use Illuminate\Http\Request;

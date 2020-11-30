@@ -3,7 +3,7 @@
 namespace Modules\Sales\Dao\Repositories;
 
 use Plugin\Helper;
-use App\User;
+use App\Dao\Models\User;
 use Plugin\Notes;
 use Illuminate\Support\Facades\DB;
 use Modules\Sales\Dao\Models\Order;

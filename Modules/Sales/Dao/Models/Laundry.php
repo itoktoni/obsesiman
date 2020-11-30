@@ -2,7 +2,7 @@
 
 namespace Modules\Sales\Dao\Models;
 
-use App\User;
+use App\Dao\Models\User;
 use Illuminate\Support\Str;
 use Modules\Crm\Dao\Models\Customer;
 use Illuminate\Support\Facades\Cache;

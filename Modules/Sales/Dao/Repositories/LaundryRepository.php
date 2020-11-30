@@ -6,7 +6,7 @@ use Plugin\Notes;
 use Plugin\Helper;
 use Modules\Sales\Dao\Models\Laundry;
 use App\Dao\Interfaces\MasterInterface;
-use App\User;
+use App\Dao\Models\User;
 use Illuminate\Database\QueryException;
 use Modules\Crm\Dao\Facades\CustomerFacades;
 use Modules\Sales\Dao\Facades\LaundryDetailFacades;
