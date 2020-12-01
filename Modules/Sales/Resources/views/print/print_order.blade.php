@@ -331,7 +331,7 @@
         position: absolute;
         right: 0;
         text-align: right;
-        top: -25px;
+        top: -15px;
     }
 
     #box h1 {
@@ -367,7 +367,7 @@
     #address {
         margin-bottom: 20px;
         position: absolute;
-        top: 55px;
+        top: 65px;
         margin-left: 0px;
     }
 
@@ -386,7 +386,7 @@
     }
 
     #container table {
-        margin-top: 50px;
+        margin-top: 60px;
         width: 100% !important;
     }
 
