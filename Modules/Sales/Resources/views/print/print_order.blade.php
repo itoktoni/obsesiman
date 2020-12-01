@@ -331,7 +331,7 @@
         position: absolute;
         right: 0;
         text-align: right;
-        top: -35px;
+        top: -25px;
     }
 
     #box h1 {
