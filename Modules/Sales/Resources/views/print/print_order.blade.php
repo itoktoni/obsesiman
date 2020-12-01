@@ -11,6 +11,7 @@
     <style>
     body {
         margin: 10px;
+        margin-bottom: 0px;
     }
 
     .print-only {
@@ -330,7 +331,7 @@
         position: absolute;
         right: 0;
         text-align: right;
-        top: -10px;
+        top: -35px;
     }
 
     #box h1 {
@@ -350,7 +351,7 @@
 
     #box table {
         position: absolute;
-        top: 40px;
+        top: 35px;
         z-index: 9;
         padding: 0px;
         right: 0px;
@@ -385,7 +386,7 @@
     }
 
     #container table {
-        margin-top: 60px;
+        margin-top: 50px;
         width: 100% !important;
     }
 
@@ -395,6 +396,7 @@
 
     #container table .contact {
         text-align: center;
+        padding-bottom: 10px;
     }
 
     #container table .contact strong {
@@ -407,7 +409,7 @@
 
     #container table .contact td {
         padding-top: 0px;
-        padding-bottom: 5px;
+        padding-bottom: 10px;
     }
 
     #container table .contact td p {
@@ -423,7 +425,7 @@
         text-align: center;
         font-size: 20px;
         font-weight: bold;
-        padding-top: 5px;
+        padding-top: 0px;
         padding-bottom: 0px;
         margin: 0px;
     }
@@ -440,7 +442,8 @@
     }
 
     #container table .header td {
-        padding-bottom: 7px;
+        padding-top:0px;
+        padding-bottom: 2px;
     }
 
     #container table .header .no {
@@ -704,12 +707,12 @@
                     </td>
                 </tr>
                 @php
-                $chuck = $detail->chunk(13);
+                $chuck = $detail->chunk(10);
                 $jumlah = count($chuck);
                 $nomer = 1;
                 @endphp
                 @if($jumlah > 1)
-                @foreach($detail->chunk(13) as $details)
+                @foreach($detail->chunk(10) as $details)
                 <tr class="header">
                     <td class="no" align="center">
                         <strong>No.</strong>
