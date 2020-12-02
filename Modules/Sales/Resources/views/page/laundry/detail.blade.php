@@ -18,14 +18,14 @@
                         {{ Form::select('', $product, null, ['class'=> 'form-control', 'id' => 'product']) }}
                     </div>
 
-                    <label class="col-md-1 control-label" for="inputDefault">Bersih</label>
-                    <div class="col-md-1">
-                        {!! Form::text('', null, ['id' => 'qty', 'class' => 'number form-control']) !!}
-                    </div>
-
                     <label class="col-md-1 control-label" for="inputDefault">Kotor</label>
                     <div class="col-md-1">
                         {!! Form::text('', null, ['id' => 'price', 'class' => 'money form-control']) !!}
+                    </div>
+
+                    <label class="col-md-1 control-label" for="inputDefault">Bersih</label>
+                    <div class="col-md-1">
+                        {!! Form::text('', null, ['id' => 'qty', 'class' => 'number form-control']) !!}
                     </div>
 
                     <label class="col-md-1 control-label" for="inputDefault">Keterangan</label>
