@@ -183,7 +183,7 @@ class LaundryController extends Controller
             }
             else{
 
-                $pdf = PdfFacade::loadView(Helper::setViewPrint(__FUNCTION__, $this->folder), $pasing)->setPaper('A5', 'landscape');
+                $pdf = PdfFacade::loadView(Helper::setViewPrint(__FUNCTION__, $this->folder), $pasing)->setPaper(array(0,0,609.4488, 389.76378));
             }
 
             return $pdf->stream();
